@@ -23,7 +23,9 @@ export default class Setting extends Component
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor:'#F9F9F9'
+    backgroundColor:'#F9F9F9',
+    alignItems: 'center', 
+    justifyContent: 'center'
   }
 });
 
