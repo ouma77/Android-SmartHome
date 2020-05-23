@@ -1,15 +1,13 @@
+import 'react-native-gesture-handler';
 import React, { Component } from 'react';
 import {
   View,
-  Button,
-  Image,
   StyleSheet, 
   Text
 } from 'react-native';
 
 export default class Profil extends Component
 {
-
   render()
   {
     return(
@@ -23,7 +21,8 @@ export default class Profil extends Component
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor:'#F9F9F9'
+    backgroundColor:'#F9F9F9',
+    alignItems: 'center', 
+    justifyContent: 'center'
   }
 });
-

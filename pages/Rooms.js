@@ -6,24 +6,40 @@ import {
   StyleSheet, 
   Text
 } from 'react-native';
-
 export default class Rooms extends Component
 {
 
+  constructor(props){
+    super(props);
+    this.state={
+      lamp: "broken",
+    }
+  }
+  getLampState(){
+    fetch('http://127.0.0.1:5000/home/lamp').then(res=>res.json()).then(data=>{
+      this.setState({ lamp: data.bedroom[0] })
+    })
+  }
+  // change=() =>
+  // {
+  //   return this.setState({etatLamp:"ON"});
+  // }
   render()
   {
     return(
     <View style={styles.container}>
-      <Text>Rooms</Text>
+      <Text>Lampe is {this.state.lamp}</Text>
+      {/* <Button title="change" onPress={this.change}></Button> */}
     </View>
     );
   }
 }
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor:'#F9F9F9'
+    backgroundColor:'#F9F9F9',
+    alignItems: 'center', 
+    justifyContent: 'center'
   }
 });
 
