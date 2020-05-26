@@ -9,8 +9,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import SignIn from './pages/SignIn';
 import Landing from './pages/Landing';
-import Profil from './pages/Profil';
-import Disconnect from './pages/Disconnect';
+import Home from './pages/Home';
 
 const Stack = createStackNavigator();
 
@@ -25,8 +24,7 @@ export default class App extends Component
       <Stack.Navigator>
         <Stack.Screen name="Landing" component={Landing} />
         <Stack.Screen name="SignIn" component={SignIn} />
-        <Stack.Screen name="Profil" component={Profil} />
-        <Stack.Screen name="Disconnect" component={Disconnect} />
+        <Stack.Screen name="Home" component={Home} />
       </Stack.Navigator>
       </NavigationContainer>
     </View>

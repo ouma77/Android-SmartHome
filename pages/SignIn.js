@@ -1,3 +1,4 @@
+import 'react-native-gesture-handler';
 import React, { Component } from 'react';
 import {
   View,
@@ -13,7 +14,7 @@ export default class SignIn extends Component
 {
   show1=() =>
   {
-    alert("Welcome to smarthome");
+    this.props.navigation.navigate('Home');
   }
 
   render()

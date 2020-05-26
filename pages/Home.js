@@ -1,3 +1,4 @@
+import 'react-native-gesture-handler';
 import React, { Component } from 'react';
 import {
   View,
@@ -6,8 +7,10 @@ import {
   StyleSheet, 
   Text
 } from 'react-native';
+
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 
 import Rooms from './Rooms';
 import Profil from './Profil';
@@ -22,14 +25,36 @@ export default class Home extends Component
   {
     return(
     <View style={styles.container}>
-      <NavigationContainer>
-      <Tab.Navigator>
-        <Tab.Screen name="Rooms" component={Rooms} />
+      
+      <Tab.Navigator
+      screenOptions={({ route }) => ({
+        tabBarIcon: ({ focused, color, size }) => {
+          let iconName;
+
+          if (route.name === 'Rooms') {
+            iconName = focused ? 'home' : 'home';
+          } else if (route.name === 'Setting') {
+            iconName = focused ? 'cog' : 'cog';
+          } else if (route.name === 'Profil') {
+            iconName = focused ? 'user' : 'user';
+          } else if (route.name === 'Disconnect') {
+            iconName = focused ? 'sign-out-alt' : 'sign-out-alt';
+          }
+          // You can return any component that you like here!
+          return <FontAwesome5 name={iconName} size={size} color={color} />;
+        },
+      })}
+      tabBarOptions={{
+        activeTintColor: '#007bff',
+        inactiveTintColor: '#202020'
+      }} 
+      >
+        <Tab.Screen name="Rooms" component={Rooms}/>
         <Tab.Screen name="Setting" component={Setting} />
         <Tab.Screen name="Profil" component={Profil} />
         <Tab.Screen name="Disconnect" component={Disconnect} />
       </Tab.Navigator>
-    </NavigationContainer>
+    
     </View>
     );
   }
