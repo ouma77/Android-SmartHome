@@ -40,7 +40,7 @@ export default class Home extends Component
             iconName = focused ? 'sign-out-alt' : 'sign-out-alt';
           }
           // You can return any component that you like here!
-          return <FontAwesome5 name={iconName} size={size} color={color} />;
+          return <FontAwesome5 name={iconName} size={30} color={color} />;
         },
       })}
       tabBarOptions={{

@@ -11,7 +11,7 @@ import {
 import { Switch } from 'react-native-gesture-handler';
 
 
-export default class bedroom extends Component
+export default class kitchen extends Component
 {
   constructor(props){
     super(props);
@@ -41,24 +41,13 @@ export default class bedroom extends Component
       {/* <ScrollView> */}
          <Image
          style={styles.img}
-         source={require('../images/bedroomRoom.png')}
+         source={require('../images/kitchenRoom.png')}
          ></Image>
 
          <View style={styles.device}>
-         <Text style={{fontSize:18, marginBottom:10}}>Temperature</Text>
-         <Text style={styles.deg}>{this.state.slideValue}°C</Text>
-         <Slider style={styles.slider} value={this.state.slideValue} minimumValue={15}
-                 maximumValue={50} step={1} minimumTrackTintColor='#FF8D8D' thumbTintColor='#FF8D8D' onValueChange={(slideValue) => this.setState({slideValue})} />
-         </View>
-
-         <View style={styles.device}>
-           <Text style={{fontSize:18, marginBottom:10}}>Light : {this.state.lamp}</Text>
-           <Switch value={this.state.switchValue2} onValueChange={(switchValue2) => this.setState({switchValue2})} />
-         </View>
-
-         <View style={styles.device}>
-           <Text style={{fontSize:18, marginBottom:10}}>Window : </Text>
+           <Text style={{fontSize:25, margin: 10}}>Window : </Text>
            <Switch value={this.state.switchValue} onValueChange={(switchValue) => this.setState({switchValue})} />
+           <Text style={{fontSize:25, margin: 10}}>{this.state.switchValue ? 'opened' : 'closed'}</Text>
          </View>
          
       
@@ -74,10 +63,10 @@ const styles = StyleSheet.create({
     backgroundColor:'#F9F9F9',
   },
   img:{
-    width:290 , 
-    height:180 , 
-    marginLeft:50, 
-    marginTop:30
+    width:270 , 
+    height:220 , 
+    marginLeft:68, 
+    marginTop:60
   },
   slider: {
     width:'100%',
@@ -85,12 +74,8 @@ const styles = StyleSheet.create({
   },
   device: {
     marginBottom:1,
-    marginTop:30,
+    marginTop:80,
     alignItems: "center"
-  },
-  deg: {
-    fontSize:20,
-    fontWeight:'bold'
   }
 });
 

@@ -11,7 +11,7 @@ import {
 import { Switch } from 'react-native-gesture-handler';
 
 
-export default class bedroom extends Component
+export default class livingroom extends Component
 {
   constructor(props){
     super(props);
@@ -41,7 +41,7 @@ export default class bedroom extends Component
       {/* <ScrollView> */}
          <Image
          style={styles.img}
-         source={require('../images/bedroomRoom.png')}
+         source={require('../images/LivingroomRoom.png')}
          ></Image>
 
          <View style={styles.device}>
@@ -75,7 +75,7 @@ const styles = StyleSheet.create({
   },
   img:{
     width:290 , 
-    height:180 , 
+    height:225 , 
     marginLeft:50, 
     marginTop:30
   },
