@@ -8,7 +8,6 @@ import {
 } from 'react-native';
 export default class bedroom extends Component
 {
-
   constructor(props){
     super(props);
     this.state={
