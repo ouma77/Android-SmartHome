@@ -42,8 +42,8 @@ const styles = StyleSheet.create({
     textAlign: "center"
   },
   icon: {
-    color:"#FF8D8D",
-    margin: 20
+    color:"#007bff",
+    margin: 30
   }
 });
 

@@ -53,12 +53,12 @@ export default class livingroom extends Component
 
          <View style={styles.device}>
            <Text style={{fontSize:18, marginBottom:10}}>Light : {this.state.lamp}</Text>
-           <Switch value={this.state.switchValue2} onValueChange={(switchValue2) => this.setState({switchValue2})} />
+           <Switch value={this.state.switchValue} onValueChange={(switchValue) => this.setState({switchValue})} />
          </View>
 
          <View style={styles.device}>
            <Text style={{fontSize:18, marginBottom:10}}>Window : </Text>
-           <Switch value={this.state.switchValue} onValueChange={(switchValue) => this.setState({switchValue})} />
+           <Switch value={this.state.switchValue2} onValueChange={(switchValue2) => this.setState({switchValue2})} />
          </View>
          
       
