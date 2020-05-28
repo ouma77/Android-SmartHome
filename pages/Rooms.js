@@ -176,6 +176,7 @@ const styles = StyleSheet.create({
   tit: {
     fontSize: 20,
     fontWeight: "bold",
+    fontFamily: "Quicksand-Medium",
     margin: 10
   }
 });

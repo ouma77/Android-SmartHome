@@ -8,40 +8,22 @@ export default class Profil extends Component
   render()
   {
     return (
-      <ImageBackground
-       source={require('../images/homeBG.jpg')}
-       imageStyle={{resizeMode: 'stretch'}}
-       style={{width: '200%', height: '100%'}}>
+      <View style={styles.container}>
+        <Image
+         style={{width:150 , height:150, marginBottom:30}}
+         source={require('../images/profil.png')}
+         ></Image>
+         <Text style={styles.txt}>Hello, You are the administrator off your own Home!</Text>
+         <Text style={styles.txt}>You can Add or change users in this application.</Text>
 
-     <StatusBar
-       backgroundColor="#0B7600"
-       barStyle="light-content"/>
-
-     <View style={styles.container}>
-
-     <View style={styles.inputContainer}>
-       <TextInput style={styles.inputs}
-        placeholder="Login"
-        keyboardType="email-address"
-        underlineColorAndroid='transparent'
-        />
-     </View>
-
-     <View style={styles.inputContainer}>
-
-        <TextInput style={styles.inputs}
-        placeholder="Password"
-        secureTextEntry={true}
-        underlineColorAndroid='transparent'
-        />
-     </View>
-
-   <TouchableOpacity style={styles.AddUserButtonText}>
-    <Text style={styles.AddUser}>Add a User</Text>
-   </TouchableOpacity>
-
-  </View>
-</ImageBackground>
+         <Text>View Users</Text>
+         <TouchableOpacity
+        style={styles.button}
+        onPress={this.onPress3}
+      >
+         <Text>Add Users</Text>
+         </TouchableOpacity>
+      </View>
     );
   }
 }
@@ -49,38 +31,11 @@ export default class Profil extends Component
 const styles = StyleSheet.create({
   container: {
      flex: 1,
-     marginLeft:30,
-     marginTop:40
+     marginTop:40,
+     alignItems:'center'
   },
-  AddUserButtonText:{
-    color: '#007bff',
-    backgroundColor: '#F9F9F9',
-    width:350,
-    height:45,
-    borderRadius:20,
-    justifyContent: 'center',
-    alignItems: 'center'
-  },
-  AddUser:{
-    color: '#007bff',
-    fontWeight:'bold',
-    alignItems: 'center'
- },
- inputContainer: {
-    borderBottomColor: '#05C203',
-    backgroundColor: '#FFFFFF',
-    borderRadius:5,
-    borderBottomWidth: 1,
-    width:350,
-    height:45,
-    marginBottom:20,
-    flexDirection: 'row',
-    alignItems:'center'
- },
- inputs:{
-    height:45,
-    marginLeft:16,
-    borderBottomColor: '#FFFFFF',
-    flex:1,
- },
+  txt: {
+    marginTop:10,
+    fontSize:15
+  }
 })
