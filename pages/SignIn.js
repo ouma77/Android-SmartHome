@@ -9,6 +9,7 @@ import {
   StyleSheet,
   KeyboardAvoidingView, Platform, TouchableWithoutFeedback, Keyboard
 } from 'react-native';
+import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scrollview';
 
 export default class SignIn extends Component
 {
@@ -20,11 +21,10 @@ export default class SignIn extends Component
   render()
   {
     return(
-    <KeyboardAvoidingView
-      behavior={Platform.OS == "ios" ? "padding" : "height"}
+    <KeyboardAwareScrollView 
       style={styles.container}
     >
-      <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+      
         <View style={styles.inner}>
           <Image
          style={{width:200 , height:200, marginBottom:20 , marginLeft:70, marginTop:30}}
@@ -38,8 +38,8 @@ export default class SignIn extends Component
             <Button title="Sign in" onPress={this.show1} />
           </View>
         </View>
-      </TouchableWithoutFeedback>
-    </KeyboardAvoidingView>
+     
+    </KeyboardAwareScrollView >
     );
   }
 }
